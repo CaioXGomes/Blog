@@ -1,0 +1,53 @@
+.btn{
+  display: inline-block;
+
+  color: $white-light;
+  background: linear-gradient(224.78deg, #5390E3 8.12%, #1357B3 92.21%);
+
+  padding: 8px 24px;
+  border-radius: 4px;
+}
+
+a{
+  text-decoration: none;
+
+  @include typeface-2(p3, desktop);
+
+  color: $white-light;
+  transition: .3s ease;
+
+  &:hover{
+    opacity: 0.7;
+  }
+}
+
+input{
+  accent-color: $primary-normal;
+}
+
+input, select, textarea, option{
+  padding: 10px 24px;
+  background-color: $black-light;
+
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+
+  color: $white-light;
+  @include typeface-2(p3, desktop);
+}
+
+.btn-search{
+  cursor: pointer;
+  height: 48px;
+  width: 56px;
+  transform: translate3d(-6px, 0, 0);
+
+  background-image: url('../../svg/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  background-color: $black-light;
+  border: none;
+  border-radius: 4px;
+}
