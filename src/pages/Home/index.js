@@ -47,6 +47,12 @@ const Home = () => {
                 </div>
             </section>
         </div>
+
+        <Banner />
+
+
+
+
         </>
     )
 }
