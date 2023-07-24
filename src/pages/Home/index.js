@@ -10,7 +10,47 @@ import Main from './Main';
 // Ícones
 import star from '../../svg/icon-chevron.svg';
 
+// API
+import api from 'services/api';
+
+
+//Hooks
+import { useState, useEffect } from 'react';
+
 const Home = () => {
+
+    // Váriaveis de estado
+    const [main, setMain] = useState([]);
+    const [mostseen, setMostseen] = useState([]);
+    const [banner, setBanner] = useState([]);
+    
+    //Faça isso quando o componente for montado
+    useEffect(() => {
+
+        // Requisição para posts com nota start = 5
+        api.get('/posts?star=5&_limit=2&_desc')
+        .then((r) => {
+            console.log(r.data);
+            setMain(r.data);
+        })
+        
+        //Requisição para banner
+        api.get('/posts?_sort=data&_order=desc&_limit=1')
+        .then((r) => {
+            console.log(r.data);
+            setMain(r.data);
+        })
+
+        //Requisição para posts mais vistos
+        api.get('/posts?_limit=3')
+        .then((r) => {
+            console.log(r.data);
+            setMain(r.data);
+        })
+    }, [])
+
+
+
     return(
         <>
           <Hero/> 
@@ -27,8 +67,13 @@ const Home = () => {
                     </p>
                 </div>
                 <div className="grid-7">
-                    <Main/>
-                    <Main />
+                    
+                    {
+                        main.map((item) => {
+                            return <Main />
+                        })
+                    }
+                    
                 </div>
             </div>
         </section> 
