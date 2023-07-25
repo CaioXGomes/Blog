@@ -5,7 +5,8 @@ import Hero from './Hero';
 import Banner from './Banner';
 import Card from './Card'
 import Main from './Main';
-
+import Header from 'pages/Header';
+import Footer from 'pages/Footer';
 
 // Ícones
 import star from '../../svg/icon-chevron.svg';
@@ -53,7 +54,11 @@ const Home = () => {
 
     return(
         <>
+
+          <Header />
+
           <Hero/> 
+
           <section className="container">
             <div className="row">
                 <div className="grid-5 pt-5 pb-3 ">
@@ -96,14 +101,14 @@ const Home = () => {
             </section>
         </div>
 
-                    {
-                        banner.map((item) => {
-                            return <Banner key={item.id} content={item} />
-                        })
-                    }
+        {
+            banner.map((item) => {
+                return <Banner key={item.id} content={item} />
+            })
+        }
 
 
-
+        <Footer />
 
         </>
     )
