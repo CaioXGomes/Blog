@@ -70,7 +70,7 @@ const Home = () => {
                     
                     {
                         main.map((item) => {
-                            return <Main />
+                            return <Main key={item.id} content={item}/>
                         })
                     }
                     
