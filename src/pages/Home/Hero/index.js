@@ -7,7 +7,7 @@ const Hero = () => {
                 <div className="row mt-9">
                     <div className="grid-4">
                         <h1 className="h0">blog<span>.</span> </h1>
-                        <p>
+                        <p>''
                             Um blog para todos. 
                             Escrever. Ler. Comentar. Contribuir. Aprender. Conectar.
                         </p>
